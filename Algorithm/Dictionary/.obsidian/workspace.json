@@ -1,0 +1,165 @@
+{
+  "main": {
+    "id": "48f7e2486db32b80",
+    "type": "split",
+    "children": [
+      {
+        "id": "483ea82bea768fb8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e805666a88c23d40",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Dictionary.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d2ea6999c5433786",
+    "type": "split",
+    "children": [
+      {
+        "id": "4fa54cff45b2bbbc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "108fd5373916d458",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "66f5b8c60859a497",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "936ade2358f5927e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "5aeb91a836deea53",
+    "type": "split",
+    "children": [
+      {
+        "id": "4cf71c3706b85447",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3caaa7666473420b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Dictionary.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5bd1648999c41102",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Dictionary.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "514928a7718f37b1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "4359d84115b90b27",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Dictionary.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:퀵 스위처 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false
+    }
+  },
+  "active": "e805666a88c23d40",
+  "lastOpenFiles": [
+    "조아영_딕셔너리.cs",
+    "Program - 복사본.cs",
+    "obj/Debug/net8.0/Dictionary.csproj.FileListAbsolute.txt",
+    "bin/Debug/net8.0/Dictionary.pdb",
+    "obj/Debug/net8.0/ref/Dictionary.dll",
+    "bin/Debug/net8.0/Dictionary.dll",
+    "bin/Debug/net8.0/Dictionary.runtimeconfig.json",
+    "obj/Debug/net8.0/Dictionary.genruntimeconfig.cache",
+    "bin/Debug/net8.0/Dictionary.deps.json",
+    "bin/Debug/net8.0/Dictionary.exe",
+    "obj/Debug/net8.0/apphost.exe",
+    "Dictionary.md"
+  ]
+}

@@ -1,0 +1,38 @@
+### string의 불변성
+
+- C#에서 문자열을 다루기 위한 타입인 string으로 변수를 선언해 문자열을 초기화 하면 변수가 가지고 있는 문자열이 변경될 때마다 변경된 문자열 내용으로 새로운 string 객체를 생성해 힙에 할당하게 된다. 이는 문자열이 반복적으로 사용되는 환경에서는 최적화를 위해 고려해봐야 하는 내용이다. 그렇다면 문자열의 반복적인 힙 메모리 할당을 줄여 최적화 할 수 있는 방안들에 대해서 조사하고 정리하도록 하자.
+
+string은 참조형 데이터 타입이다.
+하지만 class와 같은 다른 참조형 데이터들과는 다르게 참조를 통해 값이 변경되지 않는다.
+```cs
+	// 참조 형식 (클래스)
+        RefType refType1 = new RefType() { value = 10 };
+        RefType refType2 = refType1;  //객체주소가 복사
+        refType2.value = 20;  //값을 대입하면 원본 데이터를 변경
+        Console.WriteLine(refType1.value);    //20
+
+	// 참조 형식, 불변객체 (string)
+	string str1 = "Hello";
+	string str2 = str1;  //객체주소가 복사
+	str2 = "World"; //값을 대입해도 원본 데이터 변경 안됨
+        Console.WriteLine(str1.value);    //Hello
+```
+힙 메모리에 저장이 되고 스택 메모리에는 힙 메모리의 주소가 저장된다.
+저장되어있던 곳에 데이터를 재할당하게 되면 기존에 있던 스택 메모리는 지워지지 않고 새로운 스택 메모리가 생긴다.
+기존에 있던 지워지지 않는 데이터를 가비지 라고 한다.
+
+### StringBuilder
+StringBuilder를 사용하면 새 개체를 만들지 않고 문자열을 수정할 수 있다.
+
+```cs
+StringBuilder sb = new StringBuilder("ABC", 5); //초기용량(capacity)를 지정해주는데 초과되도 저장되긴함. 성능 최적화를 위한 설정일 뿐, 제한하지는 않는다.
+```
+
+```cs
+sb = "aaa";	//(X) 이렇게 바꿀 수 없음 string이 아님
+
+sb.Clear(); // 현재 내용을 지움
+sb.Append("aaa");  // 새로운 문자열을 추가
+
+Console.WriteLine(sb.ToString());  // aaa
+```

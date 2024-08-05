@@ -1,0 +1,156 @@
+{
+  "main": {
+    "id": "e55df064ec7e6313",
+    "type": "split",
+    "children": [
+      {
+        "id": "c28aa21de57b02d6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b63a98eddba2b8b3",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "64bfb78869da4fbf",
+    "type": "split",
+    "children": [
+      {
+        "id": "9c1766994309b1aa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "51318dbe30c01f50",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f1c20b4a4ad1f1a6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "507058c5afb4a448",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f9bff8632942767b",
+    "type": "split",
+    "children": [
+      {
+        "id": "3a946f40358cf52d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "51f7f0a4b60a4f52",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c424f7936634c4bb",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "79fbc93f030fcc19",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "d01efafeed2e5498",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:퀵 스위처 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false
+    }
+  },
+  "active": "51318dbe30c01f50",
+  "lastOpenFiles": [
+    "무제 폴더",
+    "List.md",
+    "bin/Debug/net8.0/List.pdb",
+    "obj/Debug/net8.0/ref/List.dll",
+    "bin/Debug/net8.0/List.dll",
+    "bin/Debug/net8.0/List.runtimeconfig.json",
+    "obj/Debug/net8.0/List.genruntimeconfig.cache",
+    "bin/Debug/net8.0/List.deps.json",
+    "bin/Debug/net8.0/List.exe",
+    "obj/Debug/net8.0/apphost.exe",
+    "obj/Debug/net8.0/refint/List.dll",
+    "obj/Debug/net8.0/List.pdb"
+  ]
+}
