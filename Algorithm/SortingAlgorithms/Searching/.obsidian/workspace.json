@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "48f7e2486db32b80",
+    "id": "0f7426d5d6762246",
     "type": "split",
     "children": [
       {
-        "id": "483ea82bea768fb8",
+        "id": "b815f8c431895355",
         "type": "tabs",
         "children": [
           {
-            "id": "e805666a88c23d40",
+            "id": "caeccd7d1c4d44d9",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -21,15 +21,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "d2ea6999c5433786",
+    "id": "3d88d5cfd56378c2",
     "type": "split",
     "children": [
       {
-        "id": "4fa54cff45b2bbbc",
+        "id": "b3355f87ca307f24",
         "type": "tabs",
         "children": [
           {
-            "id": "108fd5373916d458",
+            "id": "e3249d95a2dc9e7a",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -39,7 +39,7 @@
             }
           },
           {
-            "id": "66f5b8c60859a497",
+            "id": "bce4429f3197c9b3",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -54,7 +54,7 @@
             }
           },
           {
-            "id": "936ade2358f5927e",
+            "id": "aecd72a2a5a6e572",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -68,15 +68,15 @@
     "width": 300
   },
   "right": {
-    "id": "5aeb91a836deea53",
+    "id": "21de5cfc6925dd2a",
     "type": "split",
     "children": [
       {
-        "id": "4cf71c3706b85447",
+        "id": "eea8e947dc806e71",
         "type": "tabs",
         "children": [
           {
-            "id": "3caaa7666473420b",
+            "id": "5f9e5acb632fb58d",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -92,7 +92,7 @@
             }
           },
           {
-            "id": "5bd1648999c41102",
+            "id": "41e6c446fecb74dd",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -103,7 +103,7 @@
             }
           },
           {
-            "id": "514928a7718f37b1",
+            "id": "b6fdafe80eafeba7",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -114,13 +114,11 @@
             }
           },
           {
-            "id": "4359d84115b90b27",
+            "id": "932a13ab7d6085bb",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "알고리즘 실전.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -140,20 +138,8 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "108fd5373916d458",
+  "active": "caeccd7d1c4d44d9",
   "lastOpenFiles": [
-    "README.md",
-    "알고리즘 실전.md",
-    "조아영_딕셔너리.cs",
-    "Program - 복사본.cs",
-    "obj/Debug/net8.0/Dictionary.csproj.FileListAbsolute.txt",
-    "bin/Debug/net8.0/Dictionary.pdb",
-    "obj/Debug/net8.0/ref/Dictionary.dll",
-    "bin/Debug/net8.0/Dictionary.dll",
-    "bin/Debug/net8.0/Dictionary.runtimeconfig.json",
-    "obj/Debug/net8.0/Dictionary.genruntimeconfig.cache",
-    "bin/Debug/net8.0/Dictionary.deps.json",
-    "bin/Debug/net8.0/Dictionary.exe",
-    "Dictionary.md"
+    "README.md"
   ]
 }
