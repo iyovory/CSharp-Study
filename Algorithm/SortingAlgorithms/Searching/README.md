@@ -6,8 +6,8 @@
 -  자료구조에서 순차적으로 찾고자 하는 데이터를 탐색
 -  시간복잡도 - O(n)
 ### 이진 탐색
-- 정렬이 되어있는 자료구조에서 2분할을 통해 데이터를 탐색
-- 단, 이진 탐색은 정렬이 되어 있는 자료에만 적용 가능
+- 정렬이 되어있는 자료구조에서 2분할을 통해 데이터를 탐색(ex.100, 50, 25)
+- 단, 이진 탐색은 **정렬**이 되어 있는 자료에만 적용 가능
 - 시간복잡도 - O(logn)
 
 ```cs
@@ -65,8 +65,8 @@ public class Util
 	public static int BinarySearch(int[] array, int target)
 	{
 		int result = -1;
-		int min = 0;
-		int max = array.Length - 1;
+		int min = 0; //맨처음
+		int max = array.Length - 1; //맨끝
 
 
 		while (min <= max)
@@ -79,7 +79,7 @@ public class Util
 			}
 			else if (array[mid] > target)
 			{
-				max = mid - 1; //왼쪽보기
+				max = mid - 1; //왼쪽보기 (오른쪽 끝 앞 위치를 왼쪽으로)
 			}
 			else // if (array[mid] == target)
 			{
@@ -95,18 +95,17 @@ public class Util
 ## 깊이 우선 탐색(DFS),  너비 우선 탐색(BFS)
 ### 깊이 우선 탐색 DFS
 - 최대한 깊이 내려간 뒤, 더이상 깊어질 수 없을때 옆으로 이동해서 똑같이 내려감
-- 그래프의 분기를 만났을 때 최대한 깊이 내려간 뒤,
-- 분기의 탐색을 마쳤을 때 다음 분기를 탐색
-- 재귀(스택)를 통해 구현
+- 그래프의 분기를 만났을 때 최대한 깊이 내려간 뒤, 분기의 탐색을 마쳤을 때 다음 분기를 탐색
+- **재귀(스택)** 를 통해 구현
 - 장점) 지금 탐색하고있는 경로의 메모리만 사용해도 동작 가능. 안사용하고있으면 버림
 - 단점) 최단경로 보장X
-- 트리에서 사용하기 좋음 (트리: 경로가 하나밖에 없음)
+- 트리에서 사용하기 좋음 (트리: 경로가 하나밖에 없음) 단점이 사라짐
 https://www.cs.usfca.edu/~galles/visualization/DFS.html (Start Vertex에 0넣고 run)
 
 ### 너비 우선 탐색 BFS 
 - 최대한 넓게 이동한 뒤, 더이상 옆으로 갈 수 없을때 아래로 이동
 - 그래프의 분기를 만났을때 모든 분기들을 탐색한 뒤, 다음 깊이의 분기들을 검색
-- 큐를 통해서 구현
+- **큐**를 통해서 구현
 - 장점) 최단경로 보장
 - 단점) 다음으로 탐색해야하는 정점들까지 메모리에 보관하고 있어야함
 - 그래프에서 사용하기 좋음 (그래프: 경로가 여러개 있을 수 있음)
@@ -182,4 +181,101 @@ public static void BFS(bool[,] graph, int start, out bool[] visited, out int[] p
 		}
 	}
 }
+```
+
+## 다익스트라 최단경로 알고리즘 (Dijkstra Algorithm)
+- 거쳐서 짧아지면 짧은걸로 간다
+- 중간정점은 출발정점에서 가장 가까운 정점으로 지정(끝나면 또 가장 가까운 정점에서부터 자기 cost+거리)
+https://www.cs.usfca.edu/~galles/visualization/Dijkstra.html
+```cs
+namespace ShortesPath
+{
+    internal class Program
+    {
+        const int INF = 99999; //infinite, 이정도로 멀면 단절되어있다 
+
+        static void Main(string[] args)
+        {
+            int[,] graph = new int[8, 8]
+            {
+                //Adjacency Matrix Representation(세번째)랑 비교하면 됨
+                //처음엔 다 INF로 설정해두고 그래프랑 비교하면서 바꾸기. 자기자신은 다 0으로
+                // 0    1    2    3    4    5    6    7
+                {   0,   1,   8,   9, INF, INF, INF, INF},
+                {   1,   0, INF, INF, INF,   3, INF, INF},
+                {   8, INF,   0, INF,   1, INF,   3, INF},
+                {   9, INF, INF,   0, INF,   9, INF,   1},
+                { INF, INF,   1, INF,   0, INF,   9, INF},
+                { INF,   3, INF,   9, INF,   0,   3, INF},
+                { INF, INF,   3, INF,   9,   3,   0,   9},
+                { INF, INF, INF,   1, INF, INF,   9,   0}
+            };
+
+            Dijkstra(graph, 0, out bool[] visited, out int[] distance, out int[] parent);
+
+            for (int i = 0; i < graph.GetLength(0); i++)
+            {
+                Console.Write($" {i} ");
+                Console.Write($" {visited[i]}  ");
+                Console.Write($" {distance[i]}  ");
+                Console.Write($" {parent[i]}  ");
+                Console.WriteLine();
+            }
+        }
+
+        //visited, distance, parents를 구하는 함수
+        public static void Dijkstra(int[,] graph, int start, out bool[] visited, out int[] distance, out int[] parent)
+        {
+            //0. 초기설정
+            int size = graph.GetLength(0);  //size: 그래프의 정점 총 갯수
+            visited = new bool[size];           // visited : 각 정점의 탐색 여부 = known
+            distance = new int[size];           // distance : 각 정점의 최단거리
+            parent = new int[size];             // parent : 각 정점을 탐색한 정점이 누구인지 (역순으로 해보면 경로가 나온다) = path
+
+            for (int i = 0; i < size; i++)
+            {
+                visited[i] = false; //전부 방문한적 없는 경우부터
+                distance[i] = INF; //전부 다 단절되어있는 경우부터
+                parent[i] = -1; //-1 나를 찾은적 없다는 뜻으로
+            }
+            distance[start] = 0; //처음시작위치의 거리는 0으로
+
+            for (int i = 0; i < size; i++)
+            {
+                //1. 탐색한적 없으면서 가장 가까운 정점부터 선택
+                int minIndex = -1; //가장 작은 거리를 가진 위치를 기록해두기 위한 변수
+                int minCost = INF; //가장 작은 거리 수치를 기록해두기 위한 변수
+                                   //INF쓴 이유: 제일작은애 찾으려할때 0을 찾으면 끝나니까
+                for (int j = 0; j < size; j++)
+                {
+                    if (visited[j] == false && //탐색한 적이 없는 정점
+                       distance[j] < minCost) //거리가 가장 작은 정점(가장 가까운 정점)
+                    {
+                        //더 작은 거리를 찾았으면
+                        minIndex = j;   //가장 작은 거리를 찾은 위치로
+                        minCost = distance[j];  //가장 작은 거리의 수치를 보관
+                    }
+                }
+                if (minIndex < 0) { break; } //연결되어있으면서 탐색한적이 없는 정점이 없었던 경우 탐색종료
+
+                visited[minIndex] = true;   //다음으로 찾을 정점은 탐색했다고 표시
+
+                //2. 선택한 정점을 거쳐서 더 짧아지는 경우 갱신
+                for (int j = 0; j < size; j++)
+                {
+                    //distance[j] : 목적지까지 직접 연결된 거리
+                    //distance[minIndex] : 선택한 정점까지의 거리
+                    //graph[minIndex, j] : 선택한 정점에서 목적지까지의 거리
+                    if (distance[j] > distance[minIndex] + graph[minIndex, j])  //목적지까지 직접 연결된 거리가 거쳐서 가는 거리보다 더 큰 경우
+                    {
+                        distance[j] = distance[minIndex] + graph[minIndex, j]; //목적지까지 직접 연결된 거리를 거쳐서 가는 거리로 바꿔준다.
+                        parent[j] = minIndex; //탐색한 정점을 변경
+                    }
+                }
+            }
+
+        }
+    }
+}
+
 ```
